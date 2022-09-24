@@ -17,6 +17,14 @@ const ProductSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  manufactureDate: {
+    type: Date,
+    required: true,
+  },
+  expiryDate: {
+    type: Date,
+    required: true,
+  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",

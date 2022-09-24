@@ -36,6 +36,8 @@ module.exports = {
         image: result.secure_url,
         cloudinaryId: result.public_id,
         description: req.body.description,
+        manufactureDate: req.body.manufactureDate,
+        expiryDate: req.body.expiryDate,
         user: req.user.id,
       });
       console.log("Product has been added!");
