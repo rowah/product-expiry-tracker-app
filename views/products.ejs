@@ -18,6 +18,20 @@
     </div>
     <div class="col-3 mt-5">
       <p><%= product.description %></p>
+      <p>
+        Manufacture Date: <%=
+        `${product.manufactureDate.getDate()}/${product.manufactureDate.getMonth()
+        + 1}/${product.manufactureDate.getFullYear()}` %>
+      </p>
+      <p>
+        Expiry Date: <%=
+        `${product.expiryDate.getDate()}/${product.expiryDate.getMonth() +
+        1}/${product.expiryDate.getFullYear()}` %>
+      </p>
+      <p>
+        Product Expres in <%= Math.floor((product.expiryDate - Date.now())/(1000
+        * 60 * 60 * 24)) %> days!
+      </p>
     </div>
     <div class="col-6 mt-5">
       <a class="btn btn-primary" href="/profile">Return to Profile</a>
