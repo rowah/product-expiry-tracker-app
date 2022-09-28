@@ -11,7 +11,7 @@
           method="POST"
           class="col-3"
         >
-          <button class="btn btn-primary fa fa-trash" type="submit"></button>
+          <button class="btn btn-primary" type="submit">Delete as Used</button>
         </form>
         <%}%>
       </div>
@@ -29,10 +29,18 @@
         `${product.expiryDate.getDate()}/${product.expiryDate.getMonth() +
         1}/${product.expiryDate.getFullYear()}` %>
       </p>
-      <p>
-        Product Expres in <%= Math.floor((product.expiryDate - Date.now())/(1000
-        * 60 * 60 * 24)) %> days!
+      <% if(Math.floor((product.expiryDate - Date.now())/(1000 * 60 * 60 * 24))
+      > 3) { %>
+      <p class="expiryDate">
+        Expires in <%= Math.floor((product.expiryDate - Date.now())/(1000 * 60 *
+        60 * 24)) %> days!
       </p>
+      <%} else{ %>
+      <p class="expiryDate">
+        Expires in <%= Math.floor((product.expiryDate - Date.now())/(1000 * 60 *
+        60)) %> hours!
+      </p>
+      <% } %>
     </div>
     <div class="col-6 mt-5">
       <a class="btn btn-primary" href="/profile">Return to Profile</a>
