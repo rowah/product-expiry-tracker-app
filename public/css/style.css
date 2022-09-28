@@ -1,6 +1,13 @@
 img {
-  width: 30%;
+  width: 50%;
 }
 h1 a {
   text-decoration: none;
+}
+.fp {
+  width: 50%;
+}
+.fpmain {
+  display: flex;
+  padding: 5em;
 }
