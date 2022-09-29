@@ -34,7 +34,7 @@
       -->
       <% if(Math.floor((product.expiryDate - Date.now())/(1000 * 60 * 60 * 24))
       > 3) { %>
-      <p class="expiryDate beingAlerted">
+      <p class="expiryDate">
         Expires in <%= Math.floor((product.expiryDate - Date.now())/(1000 * 60 *
         60 * 24)) %> days!
       </p>
@@ -52,7 +52,7 @@
       -->
       <%} else if (Math.floor((product.expiryDate - Date.now())/(1000 * 60)) <
       60) { %>
-      <p class="expiryDate">
+      <p class="expiryDate beingAlerted">
         Expires in <%= Math.floor((product.expiryDate - Date.now())/(1000 * 60))
         %> minutes!
       </p>
