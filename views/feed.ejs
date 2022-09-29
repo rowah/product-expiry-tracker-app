@@ -8,22 +8,32 @@
               <img class="img-fluid" src="<%= products[i].image%>">
             </a>
           </li>
-          <!-- <p class="xsentence">
-            <%= products[i].name %> expires in <%= Math.floor((products[i].expiryDate - Date.now())/(1000
-            * 60 * 60 * 24)) %> days!
-          </p> -->
           <% if(Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60 * 24))
           > 3) { %>
           <p class="xsentence">
             Expires in <%= Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 *
             60 * 24)) %> days!
           </p>
-          <%} else{ %>
+          <!-- 
+            --less than 3 days to expiry (show hours left to expiry)
+          -->
+          <%} else if (Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60
+          * 24)) < 3) { %>
           <p class="xsentence">
             Expires in <%= Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 *
             60)) %> hours!
           </p>
+          <!-- 
+            -less than one hour to expiry (show minutes left to expiry)
+          -->
+          <%} else if (Math.floor((products[i].expiryDate - Date.now())/(1000 * 60)) <
+          60) { %>
+          <p class="expiryDate">
+            Expires in <%= Math.floor((products[i].expiryDate - Date.now())/(1000 * 60))
+            %> minutes!
+          </p>
           <% } %>
+          
         <% } %>
         </ul>
     </div>
