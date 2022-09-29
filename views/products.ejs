@@ -20,15 +20,9 @@
       <h2>Product Description</h2>
       <p><%= product.description %></p>
       <p>
-        Manufacture Date: <%=
-        `${product.manufactureDate.getDate()}/${product.manufactureDate.getMonth()
-        + 1}/${product.manufactureDate.getFullYear()}` %>
+        Manufacture Date: <%= product.manufactureDate.toLocaleDateString() %>
       </p>
-      <p>
-        Expiry Date: <%=
-        `${product.expiryDate.getDate()}/${product.expiryDate.getMonth() +
-        1}/${product.expiryDate.getFullYear()}` %>
-      </p>
+      <p>Expiry Date: <%= product.expiryDate.toLocaleDateString() %></p>
       <!-- 
         --more than 3 days to expiry (show days left to expiry)
       -->
