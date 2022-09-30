@@ -2,7 +2,7 @@
 
 # 100Devs 100Hours Project
 
-# The main purpose of the application is to prevent product westage through expiry.
+The main purpose of the application is to prevent product westage through expiry.
 
 # The application may best be used by people who live close to one another and may collect products whose expiry are due (especially food) and donate to places like children home where they can be used in bulk to prevent westage.
 
