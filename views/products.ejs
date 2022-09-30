@@ -52,7 +52,7 @@
       </p>
       <% } else if (Math.floor((product.expiryDate - Date.now())/(1000 * 60 *
       60)) < 0) { %>
-      <p class="expiryDate beingAlerted">Your product has expired</p>
+      <p class="expiryDate beingAlerted">Your <%= product.name%> has expired</p>
       <% } %>
     </div>
     <div class="col-6 mt-5">

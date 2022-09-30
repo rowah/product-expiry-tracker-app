@@ -13,7 +13,7 @@ module.exports = {
   getFeed: async (req, res) => {
     try {
       const products = await Product.find().sort({ createdAt: "desc" }).lean();
-      res.render("feed.ejs", { products: products });
+      res.render("feed.ejs", { products: products, user: req.user });
     } catch (err) {
       console.log(err);
     }
