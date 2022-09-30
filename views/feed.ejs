@@ -8,6 +8,7 @@
               <img class="img-fluid" src="<%= products[i].image%>">
             </a>
           </li>
+          <!-- more than three days to expiry (show days left) -->
           <% if(Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60 * 24))
           > 3) { %>
           <p class="xsentence">
@@ -17,8 +18,7 @@
           <!-- 
             --less than 3 days to expiry (show hours left to expiry)
           -->
-          <%} else if (Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60
-          * 24)) < 3) { %>
+          <%} else if (Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60)) < 48 && Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60)) > 1) { %>
           <p class="xsentence">
             Expires in <%= Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 *
             60)) %> hours!
@@ -26,13 +26,18 @@
           <!-- 
             -less than one hour to expiry (show minutes left to expiry)
           -->
-          <%} else if (Math.floor((products[i].expiryDate - Date.now())/(1000 * 60)) <
-          60) { %>
-          <p class="expiryDate beingAlerted">
+          <%} else if (Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60)) <
+          60 && Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60)) > 0) { %>
+          <p class="expiryDate ">
             Expires in <%= Math.floor((products[i].expiryDate - Date.now())/(1000 * 60))
             %> minutes!
           </p>
-          <% } %>
+          <% } else if (Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60)) <
+            0) { %>
+            <p class="expiryDate beingAlerted">
+              Your product has expired
+            </p>
+            <% } %>
           
         <% } %>
         </ul>
