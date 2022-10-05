@@ -35,6 +35,12 @@ footer {
   margin-left: 15em;
 }
 
+.footer-div {
+  position: fixed;
+  width: 100%;
+  height: 2px;
+}
+
 @media all and (min-width: 760px) {
   span {
     width: auto;
