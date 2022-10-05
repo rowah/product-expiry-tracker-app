@@ -3,8 +3,8 @@
   <div class="row mt-5">
       <div class="col-6">
           <div>
-              <p><strong>User Name</strong>: <%= user.userName %></p>
-              <p><strong>Email</strong>: <%= user.email %></p>
+              <p>Hello <%= user.userName %></p>
+              <!-- <p><strong>Email</strong>: <%= user.email %></p> -->
               <a href="/logout" class="col-3 btn btn-primary">Logout</a>
           </div>
           <div class="mt-5">
@@ -34,7 +34,7 @@
             </form>
           </div>
       </div>
-      <div class="col-6">
+      <!-- <div class="col-6">
         <ul class="row list-unstyled">
         <% for(var i=0; i<products.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
@@ -44,10 +44,11 @@
           </li>
         <% } %>
         </ul>
-        <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/feed">Return to All Products</a>
-        </div>  
-      </div>  
+          
+      </div>   -->
+      <div class="row justify-content-center mt-5">
+        <a class="btn btn-primary" href="/feed">See All Products</a>
+      </div>
     </div>
   </div>
 </div>
