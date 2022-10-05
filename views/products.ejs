@@ -1,20 +1,20 @@
 <%- include('partials/header') -%>
 <div class="container">
   <div class="row justify-content-center mt-5">
-    <div class="col-6">
+    <div class="col-4">
       <h2><%= product.name %></h2>
       <img class="img-fluid" src="<%= product.image%>" />
-      <div class="row justify-content-between">
+      <!-- <div class="row justify-content-between">
         <%if(product.user == user.id){ %>
         <form
           action="/product/deleteProduct/<%= product.id %>?_method=DELETE"
           method="POST"
           class="col-3"
         >
-          <button class="btn btn-primary" type="submit">Delete as Used</button>
+          <button class="btn btn-primary" type="submit">Delete</button>
         </form>
         <%}%>
-      </div>
+      </div> -->
     </div>
     <div class="col-3 mt-5">
       <h2>Product Description</h2>
@@ -55,9 +55,19 @@
       <p class="expiryDate beingAlerted">Your <%= product.name%> has expired</p>
       <% } %>
     </div>
-    <div class="col-6 mt-5">
-      <a class="btn btn-primary" href="/profile">Return to Profile</a>
-      <a class="btn btn-primary" href="/feed">Return to All Products</a>
+    <div class="col-6 mt-5 aol">
+      <a class="btn btn-primary" href="/profile">Add More</a>
+    </div>
+    <div class="row justify-content-between">
+      <%if(product.user == user.id){ %>
+      <form
+        action="/product/deleteProduct/<%= product.id %>?_method=DELETE"
+        method="POST"
+        class="col-3"
+      >
+        <button class="btn btn-primary" type="submit">Delete</button>
+      </form>
+      <%}%>
     </div>
   </div>
 </div>

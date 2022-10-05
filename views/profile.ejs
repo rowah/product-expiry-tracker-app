@@ -2,12 +2,12 @@
 <div class="container">
   <div class="row mt-5">
       <div class="col-6">
-          <div>
-              <p>Hello <%= user.userName %></p>
+          <div class="username">
+              <p class="mt-2">Hello <strong><%= user.userName %></strong></p>
               <!-- <p><strong>Email</strong>: <%= user.email %></p> -->
               <!-- <a href="/logout" class="col-3 btn btn-primary">Logout</a> -->
           </div>
-          <div class="mt-5">
+          <div class="mt-3">
             <h2>Add a Product</h2>
             <form action="/product/createProduct" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
@@ -30,7 +30,7 @@
                 <label for="imgUpload" class="form-label">Product Image</label>
                 <input type="file" class="form-control" id="imageUpload" name="file">
               </div>
-              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+              <button type="submit" class="btn btn-primary" value="Upload">Add</button>
             </form>
           </div>
       </div>
