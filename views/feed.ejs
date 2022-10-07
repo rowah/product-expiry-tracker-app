@@ -1,48 +1,52 @@
 <%- include('partials/header') -%>
-  <div class="container mt-2">
-    <div class="row justify-content-center mt-5">
-      <h1>Click on Each Product for More</h1>
-      <ul class="row list-unstyled">
-        <% for(var i=0; i<products.length; i++) {%>
-          <%if(products[i].user == user.id){ %>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/product/<%= products[i]._id%>">
-              <img class="img-fluid" src="<%= products[i].image%>">
-            </a>
-          </li>
-          <!-- more than three days to expiry (show days left) -->
-          <% if(Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60 * 24))
-          > 3) { %>
-          <p class="xsentence">
-            <%= products[i].name%> expires in <%= Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 *
-            60 * 24)) %> days!
-          </p>
-          <!-- 
-            --less than 3 days to expiry (show hours left to expiry)
-          -->
-          <%} else if (Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60)) < 48 && Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60)) > 1) { %>
-          <p class="xsentence">
-            <%= products[i].name%> expires in <%= Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 *
-            60)) %> hours!
-          </p>
-          <!-- 
-            -less than one hour to expiry (show minutes left to expiry)
-          -->
-          <%} else if (Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60)) <
-          60 && Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60)) > 0) { %>
-          <p class="xsentence ">
-            <%= products[i].name%> expires in <%= Math.floor((products[i].expiryDate - Date.now())/(1000 * 60))
-            %> minutes!
-          </p>
-          <% } else if (Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60)) <
-            0) { %>
-            <p class="xsentence beingAlerted">
-              <%= products[i].name%> has expired %>
-            </p>
-            <% } %>
-        <% } %>
-        <% } %>
-        </ul>
+<!-- mileleleee -->
+<!-- component -->
+<section class="bg-white dark:bg-gray-900">
+  <div class="container px-6 py-10 mx-auto">
+
+    <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
+      <% for(var i=0; i<products.length; i++) {%>
+        <%if(products[i].user == user.id){ %>
+          <div class="lg:flex">
+            <img class="object-cover w-full h-56 rounded-lg lg:w-64" src="<%= products[i].image%>" alt="">
+            <div class="flex flex-col justify-between py-6 lg:mx-6">
+              <a href="/product/<%= products[i]._id%>" style="font-size: 20px;">
+                Click here for Product Details
+              </a>
+              <span>Manufactured on: <%= products[i].manufactureDate.toLocaleDateString() %></span>
+              <span>Expires on: <%= products[i].expiryDate.toLocaleDateString() %></span>
+              <!-- more than three days to expiry (show days left) -->
+              <% if(Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60 * 24))
+              > 3) { %>
+                <span class="font-bold"><%= products[i].name%> expires in <%= Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 *
+                  60 * 24)) %> days!</span>
+                  <!-- 
+                --less than 3 days to expiry (show hours left to expiry)
+              -->
+              <%} else if (Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60)) < 48 && Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60)) > 1) { %>
+                <span class="text-4xl text-gray-500 dark:text-gray-300"><%= products[i].name%> expires in <%= Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 *
+                  60)) %> hours!</span> 
+                <!-- 
+                  -less than one hour to expiry (show minutes left to expiry)
+                -->
+                <%} else if (Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60)) <
+                60 && Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60)) > 0) { %>
+                  <span class="text-sm text-gray-500 dark:text-gray-300"><%= products[i].name%> expires in <%= Math.floor((products[i].expiryDate - Date.now())/(1000 * 60))
+                    %> minutes!</span>
+                    <!-- expired -->
+                <% } else if (Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60)) <
+                  0) { %>
+                   <span class="font-bold" style="color: red;"><%= products[i].name%> has expired %></span>
+                  <% } %>
+              
+            </div>
+          </div>
+          <% } %>
+          <% } %>
     </div>
-  </div>  
+  </div>
+</section>
+
+<!-- mileleleee -->
+
 <%- include('partials/footer') -%>
