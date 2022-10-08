@@ -1,32 +1,30 @@
 <%- include('partials/header') -%>
-<div class="container">
-  <div class="row justify-content-center mt-5">
-    <div class="col-4">
-      <h2><%= product.name %></h2>
-      <img class="img-fluid" src="<%= product.image%>" />
-      <!-- <div class="row justify-content-between">
-        <%if(product.user == user.id){ %>
-        <form
-          action="/product/deleteProduct/<%= product.id %>?_method=DELETE"
-          method="POST"
-          class="col-3"
-        >
-          <button class="btn btn-primary" type="submit">Delete</button>
-        </form>
-        <%}%>
-      </div> -->
-    </div>
-    <div class="col-3 mt-5">
-      <h2>About Product</h2>
-      <p><%= product.description %></p>
-      <p>
-        Manufacture Date: <%= product.manufactureDate.toLocaleDateString() %>
+<!-- component -->
+<div class="min-h-screen bg-gray-100 pt-20">
+  <!-- <h2><%= product.name %></h2> -->
+  <div
+    class="bg-white mx-auto shadow-lg rounded-lg hover:shadow-xl transition duration-200 max-w-sm"
+  >
+    <img class="rounded-t-lg" src="<%= product.image%>" alt="" />
+    <div class="py-4 px-8">
+      <h1
+        class="hover:cursor-pointer mt-2 text-gray-900 font-bold text-2xl tracking-tight"
+      >
+        About Product
+      </h1>
+      <p class="hover:cursor-pointer py-3 text-gray-600 leading-6">
+        <%= product.description %>
       </p>
-      <p>Expiry Date: <%= product.expiryDate.toLocaleDateString() %></p>
-      <!-- more than three days to expiry (show days left) -->
+      <!-- <p class="hover:cursor-pointer py-3 text-gray-600 leading-6">
+        The product was manufactured on:<%=
+        product.manufactureDate.toLocaleDateString() %>
+      </p> -->
+      <!-- <p class="hover:cursor-pointer py-3 text-gray-600 leading-6">
+        The product expires on: <%= product.expiryDate.toLocaleDateString() %>
+      </p> -->
       <% if(Math.floor((product.expiryDate - Date.now())/(1000 * 60 * 60 * 24))
       > 3) { %>
-      <p class="xsentence">
+      <p class="hover:cursor-pointer py-3 text-gray-600 leading-6">
         Expires in <%= Math.floor((product.expiryDate - Date.now())/(1000 * 60 *
         60 * 24)) %> days!
       </p>
@@ -36,7 +34,7 @@
       <%} else if (Math.floor((product.expiryDate - Date.now())/(1000 * 60 *
       60)) < 48 && Math.floor((product.expiryDate - Date.now())/(1000 * 60 *
       60)) > 1) { %>
-      <p class="xsentence">
+      <p class="hover:cursor-pointer py-3 text-gray-600 leading-6">
         Expires in <%= Math.floor((product.expiryDate - Date.now())/(1000 * 60 *
         60)) %> hours!
       </p>
@@ -46,28 +44,26 @@
       <%} else if (Math.floor((product.expiryDate - Date.now())/(1000 * 60 *
       60)) < 60 && Math.floor((product.expiryDate - Date.now())/(1000 * 60 *
       60)) > 0) { %>
-      <p class="expiryDate">
+      <p class="hover:cursor-pointer py-3 text-gray-600 leading-6">
         Expires in <%= Math.floor((product.expiryDate - Date.now())/(1000 * 60))
         %> minutes!
       </p>
       <% } else if (Math.floor((product.expiryDate - Date.now())/(1000 * 60 *
       60)) < 0) { %>
-      <p class="expiryDate beingAlerted">Your <%= product.name%> has expired</p>
-      <% } %>
-    </div>
-    <div class="col-6 mt-5 aol">
-      <a class="btn btn-primary" href="/profile">Add More</a>
-    </div>
-    <div class="row justify-content-between">
-      <%if(product.user == user.id){ %>
-      <form
-        action="/product/deleteProduct/<%= product.id %>?_method=DELETE"
-        method="POST"
-        class="col-3"
+      <p
+        class="hover:cursor-pointer py-3 text-gray-600 leading-6 expiryDate beingAlerted"
       >
-        <button class="btn btn-primary" type="submit">Delete</button>
-      </form>
-      <%}%>
+        Your <%= product.name%> has expired
+      </p>
+      <% } %>
+      <form
+      action="/product/deleteProduct/<%= product.id %>?_method=DELETE"
+      method="POST"
+      class="col-3"
+    >
+      <button class="btn btn-primary" type="submit">Delete</button>
+    </form>
+      </div>
     </div>
   </div>
 </div>

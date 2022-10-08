@@ -55,9 +55,9 @@ module.exports = {
       // Delete product from db
       await Product.remove({ _id: req.params.id });
       console.log("Deleted Product");
-      res.redirect("/profile");
+      res.redirect("/feed");
     } catch (err) {
-      res.redirect("/profile");
+      res.redirect("/feed");
     }
   },
 };
