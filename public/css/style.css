@@ -47,6 +47,9 @@ footer {
 .aol a {
   width: 85px;
 }
+.make-smaller {
+  height: 200px;
+}
 
 @media all and (min-width: 760px) {
   span {
