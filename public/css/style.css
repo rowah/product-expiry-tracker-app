@@ -71,3 +71,8 @@ footer {
     margin-left: 0;
   }
 }
+@media all and (max-width: 760px) {
+  .submit-btn {
+    margin-left: 3em;
+  }
+}
