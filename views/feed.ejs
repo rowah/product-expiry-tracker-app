@@ -7,7 +7,7 @@
     <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
       <% for(var i=0; i<products.length; i++) {%>
         <%if(products[i].user == user.id){ %>
-          <div class="lg:flex">
+          <div class="lg:flex shadow-2xl">
             <img class="object-cover w-full h-56 rounded-lg lg:w-64" src="<%= products[i].image%>" alt="">
             <div class="flex flex-col justify-between py-6 lg:mx-6">
               <a href="/product/<%= products[i]._id%>" style="font-size: 20px;">
