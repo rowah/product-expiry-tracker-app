@@ -56,3 +56,18 @@ footer {
     width: auto;
   }
 }
+
+@media all and (max-width: 1025px) {
+  .fpmain {
+    display: block;
+  }
+  .fp {
+    width: 100%;
+    font-size: medium;
+  }
+}
+@media all and (max-width: 580px) {
+  .btn-first {
+    margin-left: 0;
+  }
+}
