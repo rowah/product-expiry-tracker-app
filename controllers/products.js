@@ -2,10 +2,10 @@ const cloudinary = require("../middleware/cloudinary");
 const Product = require("../models/Product");
 
 module.exports = {
-  getProfile: async (req, res) => {
+  getHome: async (req, res) => {
     try {
       const products = await Product.find({ user: req.user.id });
-      res.render("profile.ejs", { products: products, user: req.user });
+      res.render("home.ejs", { products: products, user: req.user });
     } catch (err) {
       console.log(err);
     }
@@ -41,7 +41,7 @@ module.exports = {
         user: req.user.id,
       });
       console.log("Product has been added!");
-      res.redirect("/profile");
+      res.redirect("/home");
     } catch (err) {
       console.log(err);
     }
