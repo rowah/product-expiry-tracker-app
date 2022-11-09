@@ -3,7 +3,8 @@
   <!-- <div class="row mt-5"> -->
       <div class="col-6">
           <div class="username">
-              <p class="mt-2">Hello <strong><%= user.userName %></strong></p>
+            <!-- transforms the usersname to first letter uppercase and the rest lowercases, uinitially username would display is the exact cases used during signUp -->
+              <p class="mt-2">Hello <strong><%= user.userName[0].toUpperCase() + user.userName.slice(1).toLowerCase() %></strong></p>
 
               <% if(products.length === 0) { %>
                 <p>You have not uploaded any products!</p>

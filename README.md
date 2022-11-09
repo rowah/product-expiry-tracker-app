@@ -1,17 +1,10 @@
 # product-expiry-tracker-app
 
-# 100Devs 100Hours Project
+# The app prevent product westage through expiry.
 
-# The main purpose of the application is to prevent product westage through expiry.
+~The Application takes in products after a user buys from the store, where they key in product name, description, the dates of manufacture and expiry, and show the user how long they have till their product expires.
 
-~The application may best be used by people who live close to one another and may collect products whose expiry are due (especially food) and donate to places like children home where they can be used in bulk to prevent westage.
-
-~The Application takes in products after a user buys from the store, where they key in profuct name, description, the dates of manufacture and expiry, and show the user how long they have till their product expires.
-
-# Features to be added
-
-~ QR Code scanning of products
-~ Notification of expiry (due) on the navbar without clicking on products to the user when expiry is a day to
+Here is the link to the project: https://product-expiry-tracker.cyclic.app/
 
 # Installation
 
@@ -33,3 +26,14 @@
 # Run
 
 `npm start`
+
+# How It Was Developed
+
+Tech Used: EJS, JavaScript, CSS, MongoDB, Node, Express, Passport, Cloudinary
+
+# Lessons Learned
+
+# Features to be added in future
+
+~ QR Code scanning of products
+~ Notification of expiry (due) on the navbar without clicking on products to the user when expiry is a day to
