@@ -2,7 +2,7 @@
 
 ## The app prevent product westage through expiry.
 
-~The Application lets you upload products, key in product name, description, the dates of manufacture and expiry, and show the user how long they have till their product expires.
+The Application lets you upload products, key in product name, description, the dates of manufacture and expiry, and show the user how long they have till their product expires.
 
 Here is the link to the project: https://product-expiry-tracker.cyclic.app/
 
@@ -37,11 +37,14 @@ The application is based on a template language EJS and so no HTML or framwork i
 
 ## Lessons Learned
 
-~ Used passport for the first time and learned how interesting it is use in JavaScript for user authentication and authorization.
-~ Learned about how Cloudinary works
-~ Learned about the possibility of rendering information to the DOM without using any client-side HTML thanks to the amazing EJS.
+Used passport for the first time and learned how interesting it is use in JavaScript for user authentication and authorization.
+
+Learned about how Cloudinary works
+
+Learned about the possibility of rendering information to the DOM without using any client-side HTML thanks to the amazing EJS.
 
 ## Features to be added in future
 
-~ QR Code scanning of products for automatic upload.
-~ Notification of expiry (due) on the navbar without clicking on products to the user when expiry is a day to
+QR Code scanning of products for automatic upload.
+
+Notification of expiry (due) on the navbar without clicking on products to the user when expiry is a day to
