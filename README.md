@@ -4,7 +4,7 @@
 
 The Application lets you upload products, key in product name, description, the dates of manufacture and expiry, and show the user how long they have till their product expires.
 
-Here is the link to the project: https://product-expiry-tracker.cyclic.app/
+[Here](https://product-expiry-tracker.cyclic.app/) is the link to the project.
 
 ![Ptracker logo](https://github.com/rowah/product-expiry-tracker-app/blob/main/public/imgs/track.png)
 
