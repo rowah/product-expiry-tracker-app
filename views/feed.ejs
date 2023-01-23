@@ -14,7 +14,7 @@
                 Click here for Product Details
               </a>
               <span>Manufactured on: <%= products[i].manufactureDate.toLocaleDateString() %></span>
-              <span>Expires on: <%= products[i].expiryDate.toLocaleDateString() %></span>
+              <span>Expiry Date: <%= products[i].expiryDate.toLocaleDateString() %></span>
               <!-- more than three days to expiry (show days left) -->
               <% if(Math.floor((products[i].expiryDate - Date.now())/(1000 * 60 * 60 * 24))
               > 3) { %>
