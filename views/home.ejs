@@ -8,6 +8,9 @@
 
               <% if(products.length === 0) { %>
                 <p>You have not uploaded any products!</p>
+
+                <%} else if(products.length === 1) { %>
+                  <p>You are currently tracking the expiry of <%= products.length %> product!</p>
                 
               <%} else { %>
                 <p>You are currently tracking the expiry of <%= products.length %> products!</p>
@@ -33,6 +36,9 @@
               <label for="expiryDate" class="form-label">Expiry Date</label>
               <input type="date" class="form-control" id="expiryDate" name="expiryDate">
           </div>
+
+
+          
               <div class="mb-3">
                 <label for="imgUpload" class="form-label">Product Image</label>
                 <input type="file" class="form-control" id="imageUpload" name="file">
