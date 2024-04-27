@@ -60,5 +60,5 @@ app.use("/product", productRoutes);
 
 //Server Running
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}, you better catch it!`);
+  console.log(`Server is running on port ${PORT}`);
 });
