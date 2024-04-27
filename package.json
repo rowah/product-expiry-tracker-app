@@ -1,7 +1,7 @@
 {
-  "name": "binary-upload-boom",
+  "name": "product-expiry-tracker",
   "version": "1.0.0",
-  "description": "100Devs Social Network",
+  "description": "Food economics and environmental conservation",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
